@@ -30,3 +30,27 @@ if(playerInput == '1'){
 }
 
 printMessage('Twój ruch to: ' + playerMove);
+
+
+if(computerMove == 'kamień' && playerMove == 'papier'){
+	printMessage('Niemożliwe! Wygrałeś!');
+	} else if (computerMove == 'nożyce' && playerMove == 'kamień') {
+		printMessage('Wygrałeś stary!');
+	} else if (computerMove == 'papier' && playerMove == 'nożyce') {
+		printMessage('Wow, wygrałeś!');
+	} else if (computerMove == 'papier' && playerMove == 'kamień') {
+		printMessage('Sorry, przegrałeś');
+	} else if (computerMove == 'kamień' && playerMove == 'nożyce') {
+		printMessage('O jak mi przykro, przegrałeś');
+	} else if (computerMove == 'nożyce' && playerMove == 'papier') {
+		printMessage('Stary, przegrałeś!');
+	} else if (computerMove == 'papier' && playerMove == 'papier') {
+		printMessage('Remis, baby!');
+	} else if (computerMove == 'kamień' && playerMove == 'kamień') {
+		printMessage('Remis, baby!');
+	} else if (computerMove == 'nożyce' && playerMove == 'nożyce') {
+		printMessage('Remis, baby!');
+	}
+	else (playerInput = 'nieznany ruch') {
+		printMessage('Nie umiesz liczyć do 3?');
+	}
