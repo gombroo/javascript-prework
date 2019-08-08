@@ -121,15 +121,29 @@ document.getElementById("play-rock").addEventListener("click", function() {
 */
 
 const playRock = document.getElementById("play-rock")
-    playRock.addEventListener("click", function() {
-      playGame(1);
-    });
+playRock.addEventListener("click", function() {
+    playGame(1);
+});
 
+/*
 document.getElementById("play-paper").addEventListener("click", function() {
   playGame(2);
 });
+*/
 
+const playPaper = document.getElementById("play-paper")
+playPaper.addEventListener("click", function() {
+  playGame(2);
+});
+
+/*
 document.getElementById("play-scissors").addEventListener("click", function() {
+  playGame(3);
+});
+*/
+
+const playScissors = document.getElementById("play-scissors")
+playPaper.addEventListener("click", function() {
   playGame(3);
 });
 
