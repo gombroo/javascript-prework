@@ -29,19 +29,6 @@ function playGame(playerInput){
     }*/
 }
 
-const getMoveName = function(argMoveId) {
-    if (argMoveId == 1) {
-      return "kamień";
-    } else if (argMoveId == 2) {
-      return "papier";
-    } else if (argMoveId == 3) {
-      return "nożyce";
-    } else {
-      printMessage("Nie znam ruchu o id " + argMoveId + ".");
-      return "nieznany ruch";
-    }
-};
-
 /* function getMoveName(argMoveId) {
   if (argMoveId == 1) {
     return "kamień";
@@ -55,7 +42,20 @@ const getMoveName = function(argMoveId) {
   }
 } */
 
-function displayResult(argComputerMove, argPlayerMove) {
+const getMoveName = function(argMoveId) {
+    if (argMoveId == 1) {
+      return "kamień";
+    } else if (argMoveId == 2) {
+      return "papier";
+    } else if (argMoveId == 3) {
+      return "nożyce";
+    } else {
+      printMessage("Nie znam ruchu o id " + argMoveId + ".");
+      return "nieznany ruch";
+    }
+};
+
+/* function displayResult(argComputerMove, argPlayerMove) {
   printMessage("Zagrałem " + argComputerMove + ", a Ty " + argPlayerMove);
 
   if (argComputerMove == "kamień" && playerMove == "papier") {
@@ -79,6 +79,32 @@ function displayResult(argComputerMove, argPlayerMove) {
   } else if (playerInput == "nieznany ruch") {
     printMessage("Nie umiesz liczyć do 3?");
   }
+} */
+
+const displayResult = function(argComputerMove, argPlayerMove) {
+    printMessage("Zagrałem " + argComputerMove + ", a Ty " + argPlayerMove);
+
+    if (argComputerMove == "kamień" && playerMove == "papier") {
+      printMessage("Niemożliwe! Wygrałeś!");
+    } else if (argComputerMove == "nożyce" && argPlayerMove == "kamień") {
+      printMessage("Wygrałeś stary!");
+    } else if (argComputerMove == "papier" && argPlayerMove == "nożyce") {
+      printMessage("Wow, wygrałeś!");
+    } else if (argComputerMove == "papier" && argPlayerMove == "kamień") {
+      printMessage("Sorry, przegrałeś");
+    } else if (argComputerMove == "kamień" && argPlayerMove == "nożyce") {
+      printMessage("O jak mi przykro, przegrałeś");
+    } else if (argComputerMove == "nożyce" && argPlayerMove == "papier") {
+      printMessage("Stary, przegrałeś!");
+    } else if (argComputerMove == "papier" && argPlayerMove == "papier") {
+      printMessage("Remis, baby!");
+    } else if (argComputerMove == "kamień" && argPlayerMove == "kamień") {
+      printMessage("Remis, baby!");
+    } else if (argComputerMove == "nożyce" && argPlayerMove == "nożyce") {
+      printMessage("Remis, baby!");
+    } else if (playerInput == "nieznany ruch") {
+      printMessage("Nie umiesz liczyć do 3?");
+    }
 }
 
 document.getElementById("play-rock").addEventListener("click", function() {
