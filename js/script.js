@@ -1,3 +1,4 @@
+/*
 function playGame(playerInput){
   clearMessages()
 
@@ -6,30 +7,33 @@ function playGame(playerInput){
 
   const computerMove = getMoveName(randomNumber);
   console.log(computerMove);
-  /* if(randomNumber == 1){
-      computerMove = 'kamień';
-    }	else if (randomNumber == 2) {
-    		computerMove = 'papier';
-    }	else if (randomNumber == 3) {
-    		computerMove = 'nożyce';
-    }*/
 
   printMessage('Mój ruch to: ' + computerMove);
   console.log('Gracz wpisał: ' + playerInput);
-  /*let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');*/
 
   const playerMove = getMoveName(playerInput);
   printMessage('Twój ruch to: ' + playerMove);
-  /*if(playerInput == '1'){
-      playerMove = 'kamień';
-    }	else if (playerInput = '2') {
-    		playerMove = 'papier';
-    }	else if (playerInput = '3') {
-    		playerMove = 'nożyce';
-    }*/
+}
+*/
+
+const playGame = function(playerInput) {
+    clearMessages()
+
+    const randomNumber = Math.floor(Math.random() * 3 + 1);
+    console.log('Wylosowana liczba to: ' + randomNumber);
+
+    const computerMove = getMoveName(randomNumber);
+    console.log(computerMove);
+
+    printMessage('Mój ruch to: ' + computerMove);
+    console.log('Gracz wpisał: ' + playerInput);
+
+    const playerMove = getMoveName(playerInput);
+    printMessage('Twój ruch to: ' + playerMove);
 }
 
-/* function getMoveName(argMoveId) {
+/*
+function getMoveName(argMoveId) {
   if (argMoveId == 1) {
     return "kamień";
   } else if (argMoveId == 2) {
@@ -40,7 +44,8 @@ function playGame(playerInput){
     printMessage("Nie znam ruchu o id " + argMoveId + ".");
     return "nieznany ruch";
   }
-} */
+}
+*/
 
 const getMoveName = function(argMoveId) {
     if (argMoveId == 1) {
@@ -55,7 +60,8 @@ const getMoveName = function(argMoveId) {
     }
 };
 
-/* function displayResult(argComputerMove, argPlayerMove) {
+/*
+function displayResult(argComputerMove, argPlayerMove) {
   printMessage("Zagrałem " + argComputerMove + ", a Ty " + argPlayerMove);
 
   if (argComputerMove == "kamień" && playerMove == "papier") {
@@ -79,7 +85,8 @@ const getMoveName = function(argMoveId) {
   } else if (playerInput == "nieznany ruch") {
     printMessage("Nie umiesz liczyć do 3?");
   }
-} */
+}
+*/
 
 const displayResult = function(argComputerMove, argPlayerMove) {
     printMessage("Zagrałem " + argComputerMove + ", a Ty " + argPlayerMove);
